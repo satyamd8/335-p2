@@ -20,22 +20,25 @@ void vectorMedian(const std::vector<int> * instructions)
 
     //RETHINK COMPLETELY
     /*
-        first 
+        if != -1
+            insert into vector
+                using lower_bound
+        else
+            pop and return median
     */
 
     std::vector<int> temp;
 
     for (int i = 0; i < instructions->size(); i++){
-        auto it = std::lower_bound(instructions->begin(), instructions->end(), i);
-        if (instructions->at(i) != -1){
+        if (instructions->at(i) != 1){
+            auto it = std::lower_bound(instructions->begin(), instructions->end(), i);
             temp.insert(it, instructions->at(i));
         }
-
-        int median = temp.size()/2;
-
-        std::cout << median << " ";
-
-        temp.erase(temp.begin() + median);
+        else{
+            int median = temp.size()/2;
+            std::cout << temp[median] << " ";
+            temp.erase(temp.begin() + median);
+        }
     }
 }
 
