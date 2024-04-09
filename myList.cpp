@@ -11,11 +11,17 @@ Date: 4/5/2024
 
 void listMedian(const std::vector<int> * instructions)
 {
-    std::vector<int> temp;
-
+    std::list<int> temp;
     for (int i = 0; i < instructions->size(); i++){
-        auto it = std::lower_bound(temp.begin(), temp.end(), i);
-        if (instructions[i])
+        if (instructions->at(i) != -1){
+            //CANT USE LOWER_BOUND
+            //have to iterate through list
+        }
+        else{
+            int median = temp.size()/2;
+            //must traverse through list to find median
+            //can use previous iteration
+        }
     }
 }
 

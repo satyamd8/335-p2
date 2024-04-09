@@ -10,23 +10,13 @@ Date: 4/5/2024
 #include <iostream>
 
 /*
-    goes through the instructions input and inserts the appropriate
-    inputs while sorting with lower_bound function
-
-    then sets appropriate median and prints each loop
+    goes through instructions, 
+        if value then push
+        if -1 then return and pop median
 */
 void vectorMedian(const std::vector<int> * instructions)
 {
-
-    //RETHINK COMPLETELY
-    /*
-        if != -1
-            insert into vector
-                using lower_bound
-        else
-            pop and return median
-    */
-
+    //FIND HOW TO USE LOWER_BOUND
     std::vector<int> temp;
 
     for (int i = 0; i < instructions->size(); i++){
