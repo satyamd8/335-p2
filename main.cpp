@@ -16,17 +16,13 @@ Date: 4/5/2024
 #include "myAVLtree.hpp"
 using namespace std;
 
+//CHANGE
+
 int main(){
     string input = "testinput.txt";
     ifstream fin(input);
 
     vector <int> instructions;
-
-    //include fail case
-    if (fin.fail()){
-        cout << "Could not open file" << endl;
-        exit(1);
-    }
 
     string l;
     while (getline(fin, l)){
@@ -53,6 +49,6 @@ int main(){
         
     }
     fin.close();
-    vectorMedian(&instructions);
+    listMedian(&instructions);
     cout << "done" << endl;
 }

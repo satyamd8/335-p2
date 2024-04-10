@@ -15,7 +15,7 @@ void listMedian(const std::vector<int> * instructions)
     std::vector<int> medList;
 
     for (auto it = instructions->begin(); it != instructions->end(); ++it) {
-        if (*it != -1) {
+        if (*it != -1) { //can change to for loop
             auto insertPos = tempList.begin();
             while (insertPos != tempList.end() && *insertPos < *it) {
                 ++insertPos;
@@ -23,19 +23,16 @@ void listMedian(const std::vector<int> * instructions)
             tempList.insert(insertPos, *it);
         } else {
             int median;
+            auto medianFind = tempList.begin();
             if (tempList.size() % 2 == 0) {
-                auto it1 = tempList.begin();
-                std::advance(it1, tempList.size() / 2 - 1);
-                auto it2 = it1;
-                std::advance(it2, 1);
-                median = (*it1 + *it2) / 2;
+                std::advance(medianFind, tempList.size() / 2 - 1);
+                medList.push_back(*medianFind);
+                tempList.erase(std::next(tempList.begin(), tempList.size() / 2 - 1));
             } else {
-                auto itMedian = tempList.begin();
-                std::advance(itMedian, tempList.size() / 2);
-                median = *itMedian;
+                std::advance(medianFind, tempList.size() / 2);
+                medList.push_back(*medianFind);
+                tempList.erase(std::next(tempList.begin(), tempList.size() / 2));
             }
-            medList.push_back(median);
-            tempList.erase(std::next(tempList.begin(), tempList.size() / 2));
         }
     }
 
