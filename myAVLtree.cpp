@@ -191,7 +191,7 @@ void treeMedian(const std::vector<int> * instructions)
                 }
             }
         }
-    }
+    } 
 
     for (int i = 0; i < medList.size(); i++){
         std::cout << medList[i] << " ";

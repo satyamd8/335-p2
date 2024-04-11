@@ -9,23 +9,27 @@ Date: 4/5/2024
 #include "myVector.hpp"
 #include <iostream>
 #include <cmath>
+#include <chrono>
 
 /*
-    goes through instructions, 
-        if value then push
-        if -1 then return and pop median
+    Inserting to vector
+        Uses lower_bound to determine the correct index to insert to, by checking if value is lower than existing element
+        then inserts
+    Popping median
+        finds median index, handles even and odd cases
+        adds median to vector of medians
+        erases median from list
+    median vector is printed
 */
 void vectorMedian(const std::vector<int> * instructions)
 {
-    //FIND HOW TO USE LOWER_BOUND
     std::vector<int> temp;
 
     std::vector<int> medList;
 
+
     for (auto it = instructions->begin(); it != instructions->end(); ++it){
         if (*it != -1){
-            //std::cout << "push" << " ";//test
-
             auto insert = std::lower_bound(temp.begin(), temp.end(), *it);
             temp.insert(insert, *it);
         }

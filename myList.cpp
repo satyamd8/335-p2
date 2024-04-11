@@ -9,6 +9,17 @@ Date: 4/5/2024
 #include "myList.hpp"
 #include <iostream>
 
+
+/*
+    Inserting to list
+        First iterates through list to find propert insert position based on least to greatest
+        then inserts
+    Popping median
+        finds median index, handles even and odd cases
+        adds median to vector of medians
+        erases median from list
+    median vector is printed
+*/
 void listMedian(const std::vector<int> * instructions) 
 {
     std::list<int> tempList;
@@ -35,6 +46,7 @@ void listMedian(const std::vector<int> * instructions)
             }
         }
     }
+
 
     for (int i = 0; i < medList.size(); i++) {
         std::cout << medList[i] << " ";

@@ -9,7 +9,18 @@ Date: 4/5/2024
 #include "myHeap.hpp"
 #include <iostream>
 
-//heap function: pop, push, size, top
+/*
+    Creates two heaps, max and min
+    first pushes element to max heap to initialize
+    
+    popping median
+        pushes top of max heap (median) to median vector
+        pops top element (median)
+        adjust max and min heap depending on thei size
+    insert
+        check if element in instructions is greater or less than the top element of max heap
+        then inserts to the correct heap
+*/
 
 void heapMedian(const std::vector<int> * instructions)
 {
@@ -17,6 +28,7 @@ void heapMedian(const std::vector<int> * instructions)
     
     std::priority_queue<int> max;
     std::priority_queue<int, std::vector<int>, std::greater<int>> min;
+
 
     for (auto it = instructions->begin(); it != instructions->end(); ++it){
         if (/*max heap is empty, size == 0*/ max.size() == 0 && *it != -1){

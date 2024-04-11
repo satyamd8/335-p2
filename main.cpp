@@ -19,7 +19,7 @@ using namespace std;
 //CHANGE
 
 int main(){
-    string input = "testinput.txt";
+    string input = "input3.txt";
     ifstream fin(input);
 
     vector <int> instructions;
@@ -47,7 +47,8 @@ int main(){
     }
     fin.close();
     vectorMedian(&instructions);
-    cout << endl << endl;
+    listMedian(&instructions);
+    heapMedian(&instructions);
     treeMedian(&instructions);
     cout << "done" << endl;
 }
