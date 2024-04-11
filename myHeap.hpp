@@ -9,6 +9,10 @@ Date: 4/5/2024
 #define myHeap_hpp
 
 #include <vector>
+#include <queue>
+#include <chrono>
+
+//use priority queues
 
 void heapMedian(const std::vector<int> * instructions);
 

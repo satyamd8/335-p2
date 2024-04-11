@@ -13,7 +13,7 @@ Date: 4/5/2024
 #include "myVector.hpp"
 #include "myList.hpp"
 #include "myHeap.hpp"
-#include "myAVLtree.hpp"
+//#include "myAVLtree.hpp"
 using namespace std;
 
 //CHANGE
@@ -49,6 +49,6 @@ int main(){
         
     }
     fin.close();
-    listMedian(&instructions);
+    heapMedian(&instructions);
     cout << "done" << endl;
 }
