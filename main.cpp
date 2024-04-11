@@ -13,7 +13,7 @@ Date: 4/5/2024
 #include "myVector.hpp"
 #include "myList.hpp"
 #include "myHeap.hpp"
-//#include "myAVLtree.hpp"
+#include "myAVLtree.hpp"
 using namespace std;
 
 //CHANGE
@@ -36,19 +36,18 @@ int main(){
                     instructions.push_back(value);
                 }
             }
-            else if (inst == "pop"){ //MODIFY
+            else if (inst == "pop"){
                 string k;
                 if (word >> k && k == "median"){
                     instructions.push_back(-1);
-                }
-                else{
-                    cout << "Can't pop" << endl; //temp
                 }
             }
         }
         
     }
     fin.close();
-    heapMedian(&instructions);
+    vectorMedian(&instructions);
+    cout << endl << endl;
+    treeMedian(&instructions);
     cout << "done" << endl;
 }

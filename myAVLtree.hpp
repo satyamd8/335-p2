@@ -37,17 +37,7 @@ AvlNode *findMin(AvlNode *t);
 AvlNode *findMax(AvlNode *t);
 
 
-void treeMedian(const std::vector<int> * instructions){
-    std::vector<int> medList;
-    //max tree initialize
-    AvlNode *max = nullptr;
-    //min tree initialize
-    AvlNode *min = nullptr;
-
-    int maxCount = 0;
-    int minCount = 0;
-
-    for (auto it = instructions->begin(); it != instructions->end(); ++it);
+void treeMedian(const std::vector<int> * instructions);
 
 #endif
 

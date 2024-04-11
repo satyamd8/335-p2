@@ -10,6 +10,7 @@ Date: 4/5/2024
 
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 void vectorMedian(const std::vector<int> * instructions);
 
